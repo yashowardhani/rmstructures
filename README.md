@@ -1,0 +1,27 @@
+This repository contains the scripts required to carry out all the analysis and produce all the plots included in "Effect of magnetic field-thermal electron density correlation on the
+estimated magnetic fields from pulsar observations" by Yashowardhani, Amit Seta, Christoph Federrath, and Mark Krumholz
+
+# Contents
+## Scripts
+- ellipses.py: Build the cubes of synthetic electron number density (ne) and magnetic field along the the line of sight (mag) cubes
+- 3dplot.py: Visualise the 3D structure of mag and ne for a given model (fig. 1)
+- maps.py: Generate 2D maps for RM, DM, mag_av, and RM/DM for the boundary-case models (figs. 2 and 3)
+- multiseeddata.py:Calculate RM, DM, and mag_av, and aggregate all the data from multiple seeds and viewing angles
+- histograms.py: Create histograms between RM/DM and mag_av for boundary-case models, and fit the slope, alpha between them (fig. 4)
+- compute.py: Compute alpha and rho (and optionally mag-ne correlation and meanDM/sigmaDM) from the aggregate data
+- plot.py: Generate alpha vs rho plot (and other kinds of scatter plots) from the data (figs. 5, 6, and 7)
+- fit_with_psamples.py: Calculate fit parameters for alpha vs rho and save all the samples in alpha_psamples.npz
+- ffcons.py: Plot and fit f_vol against mean(DM)/sigma(DM) (fig. 8), and save the fit samples in ffcons_psamples.npz
+- fitting.py: Fit the pulsar data using the algorithm in section 4 and save samples
+- plot_alpha.py: Plot alpha estimates from alpha.npz
+- utilities.py: Some functions used in the scripts
+- labels.py: Labels used in plots
+
+## Fit samples
+- alpha_psamples.npz: All the fit parameter samples for the alpha vs rho fits, for every dataset
+- ffcons_psamples.npz: All the fit parameter samples for the ff vs mean(DM)/sigma(DM) fits, for every mach number
+- alpha.npz: Alpha values calculated from pulsar data using fitting.py. Also contains ff and rho samples.
+
+## Notebooks
+- nrmse.ipynb: Plotting the distribution of NRMSE of the fit
+- mag_histograms.ipynb: Calculating and plotting magnetic field estimates
